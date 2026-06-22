@@ -230,7 +230,7 @@ telephony-service
    ip source-address 10.42.100.8 port 2000
    create cnf-files
 ephone-dn 1
-  number 4211
+  number 4242
 ephone-dn 2
   number 4222
 ephone-dn 3
@@ -284,78 +284,78 @@ exit
 
 !OUTGOING CALL FROM CUCM TO OTHER CUCM.
 configure terminal
- dial-peer voice 11 Voip
- destination-pattern 11..
- session target ipv4:10.11.100.8
- codec g711ULAW
+ dial-peer voice 42 Voip
+ destination-pattern 42..
+ session target ipv4:10.42.100.8
+ codec g742ULAW
   !dial-peer voice 12 Voip
   !destination-pattern 12..
   !session target ipv4:10.12.100.8
-  !codec g711ULAW
+  !codec g742ULAW
 dial-peer voice 21 Voip
  destination-pattern 21..
  session target ipv4:10.21.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 22 Voip
  destination-pattern 22..
  session target ipv4:10.22.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 31 Voip
  destination-pattern 31..
  session target ipv4:10.31.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 32 Voip
  destination-pattern 32..
  session target ipv4:10.32.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 41 Voip
  destination-pattern 41..
  session target ipv4:10.41.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 42 Voip
  destination-pattern 42..
  session target ipv4:10.42.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 51 Voip
  destination-pattern 51..
  session target ipv4:10.51.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 52 Voip
  destination-pattern 52..
  session target ipv4:10.52.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 61 Voip
  destination-pattern 61..
  session target ipv4:10.61.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 62 Voip
  destination-pattern 62..
  session target ipv4:10.62.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 71 Voip
  destination-pattern 71..
  session target ipv4:10.71.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 72 Voip
  destination-pattern 72..
  session target ipv4:10.72.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 81 Voip
  destination-pattern 81..
  session target ipv4:10.81.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 82 Voip
  destination-pattern 82..
  session target ipv4:10.82.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 91 Voip
  destination-pattern 91..
  session target ipv4:10.91.100.8
- codec g711ULAW
+ codec g742ULAW
 dial-peer voice 92 Voip
  destination-pattern 92..
  session target ipv4:10.92.100.8
- codec g711ULAW
+ codec g742ULAW
 
 TASK3***TASK3***TASK3***
 TASK3***TASK3***TASK3***
@@ -444,7 +444,7 @@ ip ssh version 2
  !!! EDGE route NOT dikit to ClassMate:
 conf t
  ip routing 
- ip route 10.11.0.0 255.255.0.0 200.0.0.11
+ ip route 10.42.0.0 255.255.0.0 200.0.0.42
  NO ip route 10.42.0.0 255.255.0.0 200.0.0.42
  ip route 10.21.0.0 255.255.0.0 200.0.0.21
  ip route 10.22.0.0 255.255.0.0 200.0.0.22
@@ -497,7 +497,7 @@ dial-peer voice 69 voip
  session target ipv4:10.42.100.8
  incoming called-number 4269
  dtmf-relay h245-alphanumeric
- codec g711ulaw
+ codec g742ulaw
  no vad
 !
 telephony-service
@@ -650,14 +650,14 @@ conf t
     number 1 dn 1
     dtmf-relay sip-notify
     username 4271 password 4271
-    codec g711ulaw
+    codec g742ulaw
 !
   voice register pool 2
     id mac ____.____.____
     number 1 dn 2
     dtmf-relay sip-notify
     username 4272 password 4272
-    codec g711ulaw
+    codec g742ulaw
    end
 !
 *******call other countries!!!********
@@ -667,7 +667,7 @@ dial-peer voice _ voip
 destination-pattern k..
 session protocol sipv2
 session target sip-server
-codec g711ulaw
+codec g742ulaw
 exit
           
 sip-ua
