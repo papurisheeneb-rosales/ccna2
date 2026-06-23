@@ -1,0 +1,45 @@
+Class B : 172.16.0.0
+
+
+LTO.GOV.PH
+32-10b = /22 3rd 4i
+Network address : 172.16.4.0
+1st usable : 172.16.4.1
+last usable : 172.16.7.254
+broadcast: 172.16.7.255
+Not urs: 172.16.8.0
+
+wildcard: 0.0.3.255
+
+======================================
+COMELEC.GOV.PH
+32-5b = /27 4th 32i
+Network address : 172.16.0.32
+1st usable: 172.16.0.33
+last usable : 172.16.0.62
+broadcast : 172.16.0.63
+Not urs: 172.16.0.64
+
+wildcard: 0.0.255.31
+
+======================================
+DPWH.GOV.PH
+32-12b = /20 3rd 16i
+Network address : 172.16.16.0
+1st usable : 172.16.16.1
+last usable : 172.16.31.254
+broadcast: 172.16.31.255
+Not urs: 172.16.32.0
+
+wildcard: 0.0.3.15
+
+======================================
+
+32-4b = /28  4th 16i
+Network address : 172.16.0.16
+1st usable: 172.16.0.17
+last usable : 172.16.0.30
+broadcast: 172.16.0.31
+Not urs: 172.16.0.32
+
+wildcard: 0.0.255.15

@@ -1,0 +1,114 @@
+vlan 6
+name GOODYEARINC
+Interface vlan 3
+ desc SVIFORCHEVRON
+ no shut
+ ip add 10.0.32.1 255.255.224.0
+
+Implementing IPAMS: IP Address Management Server: IPAMS
+
+
+======================================
+LTO.GOV.PH
+======================================
+D1/C1
+config t
+vlan 13
+name LTO.GOV.PH
+Interface vlan 13
+ desc LTO.GOV.PH
+ no shut
+ ip add 172.16.4.1 255.255.252.0
+exit
+ip dhcp excluded-add 172.16.4.1 172.16.4.100
+ip dhcp pool LTO.GOV.PH
+ network 172.16.4.0 255.255.252.0
+ default-router 172.16.4.1
+dns-server 8.8.8.8
+end
+sh ip dhcp binding
+@A1:
+conf t
+Int e0/0
+sw mo acc
+sw acc vl 13
+do sh vl br
+@P1:
+config t
+int e0/0
+no shut
+no ip address dhcp
+ip address dhcp
+no shut
+do bp
+do sh ip domain
+
+
+
+
+
+======================================
+COMELEC.GOV.PH
+======================================
+@C2:
+config t
+vlan 193
+name TELUS.COM
+Interface vlan 69
+ desc TELUS.COM
+ no shut
+ ip add 172.16.0.33 255.255.255.224
+exit
+ip dhcp excluded-add 172.16.0.33 172.16.0.35
+ip dhcp pool COMELEC.GOV.PH
+ network 172.16.0.32 255.255.255.224
+ default-router 172.16.0.33
+dns-server 8.8.8.8
+end
+sh ip dhcp binding
+
+@A2:
+conf t
+Int e1/0
+sw mo acc
+sw acc vl 69
+do sh vl br
+
+@P2:
+config t
+int e1/0
+no shut
+no ip address dhcp
+ip address dhcp
+no shut
+do bp
+do sh ip domain
+
+
+
+
+
+
+
+
+172.28.228.144/23
+(3rd, 2i)
+
+
+160 + 80 = 220
+222
+224
+226
+228
+
+172.28.228.0/23
+           .228.145
+
+
+172.28.228.144/25 (4th, 128i)
+	 .0
+	 .128
+
+
+
+
